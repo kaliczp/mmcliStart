@@ -1,0 +1,5 @@
+#+TITLE: Some Scripts for ModemManager
+
+I occasionally use ModemManager from the command line. The goal of
+this repository is to replace frequently used command line sequences
+with simple scripts.
