@@ -4,7 +4,7 @@ bearer=$(mmcli -m $modem | grep Bearer | awk -F "/" '{print $6}' | xargs)
 # Reset the settings if bearer number found
 if [[ "$bearer" =~ ^[0-9]+$ ]]; then
     sudo mmcli -m $modem --simple-disconnect
-    curripaddr=$(mmcli -b $bearer | grep address | awk -F ":" '{print $2}')
+    curripaddr=$(mmcli -b $bearer | grep address | awk -F ":" '{print $2}' | xargs)
     sudo mmcli -m $modem --delete-bearer=$bearer
     sudo mmcli -m $modem --disable
     sudo ip a del $curripaddr/32 dev wwan0
