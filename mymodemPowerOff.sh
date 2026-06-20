@@ -10,6 +10,7 @@ if [[ "$bearer" =~ ^[0-9]+$ ]]; then
     sudo ip a del $curripaddr/32 dev wwan0
     sudo ip link set wwan0 down
 else
-    echo "No bearer found. Modem poweroff"
+    echo "No bearer found."
 fi
+echo "Modem poweroff."
 sudo mmcli -m $modem --set-power-state-off
